@@ -1,0 +1,26 @@
+main {
+    height: 291px;
+    background-color: #FAFAF8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    width: 399px;
+    padding: 9px 13px;
+    border-radius: 6px;
+    border: 1px solid #D1D5DB;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+button {
+    width: 183px;
+    margin-left: 12px;
+    padding: 9px 17px;
+    border-radius: 6px;
+    border: none;
+    background-color: #141413;
+    color: #FAFAF8;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
