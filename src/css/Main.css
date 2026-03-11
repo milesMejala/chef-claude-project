@@ -1,7 +1,7 @@
-main {
-    height: 291px;
-    background-color: #FAFAF8;
+form {
+    margin: 70px auto 0 auto;
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
@@ -14,7 +14,7 @@ input {
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
-button {
+.add-ingredient-btn {
     width: 183px;
     margin-left: 12px;
     padding: 9px 17px;
@@ -23,4 +23,49 @@ button {
     background-color: #141413;
     color: #FAFAF8;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.ingredients-on-hand-container {
+    margin-top: 48px;
+    margin-left: 62px;
+}
+
+ul {
+    margin-top: 24px;
+    margin-left: 24px;
+}
+
+ul > li {
+    margin-top: 16px;
+}
+
+.get-recipe-container {
+    border-radius: 8px;
+    margin: 48px 0 66px 0;
+    width: 594px;
+    height: 109px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 56px;
+    background-color: #F0EFEB;
+}
+
+.get-recipe-container > div > p:first-of-type {
+    font-size: 18px;
+}
+
+.get-recipe-container > div > p:last-of-type {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #6B7280;
+}
+
+.get-recipe-btn {
+    border-radius: 6px;
+    border: none;
+    width: 115px;
+    height: 38px;
+    background-color: #D17557;
+    color: #FAFAF8;
 }

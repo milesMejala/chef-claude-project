@@ -10,9 +10,7 @@ export default function Main() {
         return <li key={ingredient}>{ingredient}</li>
     })
 
-    function handleSubmit(event) {
-        event.preventDefault()
-        const formData = new FormData(event.currentTarget)
+    function handleSubmit(formData) {
         const newIngredient = formData.get("ingredient")
         setIngredient(prevIngredient => [...prevIngredient, newIngredient])
         console.log(ingredients)
@@ -20,7 +18,7 @@ export default function Main() {
 
     return (
         <main>
-            <form onSubmit={handleSubmit}>
+            <form action={handleSubmit}>
                 <input 
                     id="ingredient"
                     type="text"
@@ -28,11 +26,19 @@ export default function Main() {
                     placeholder="e.g. oregano"
                     aria-label="Add Ingredient"
                 />
-                <button type="submit">+ Add ingredient</button>
-                <ul>
-                    {listIngredients}
-                </ul>
+                <button class="add-ingredient-btn" type="submit">+ Add ingredient</button>
             </form>
+            {ingredients.length > 0 && <section class="ingredients-on-hand-container">
+                <h2>Ingredients on hand:</h2>
+                <ul>{listIngredients}</ul>
+                <div class="get-recipe-container">
+                    <div>
+                        <p>Ready for a recipe?</p>
+                        <p>Generate a recipe from your list of ingredients.</p>
+                    </div>
+                    <button class="get-recipe-btn">Get a recipe</button>
+                </div>
+            </section>}
         </main>
     )
 }

@@ -5,7 +5,9 @@
 }
 
 body {
+  border: 1px solid black;
   margin: 0 auto;
   width: 720px;
   font-family: 'Inter', sans-serif;
+  background-color: #FAFAF8;
 }
