@@ -31,6 +31,10 @@ input {
     margin-left: 62px;
 }
 
+p, ul, ol, h3 {
+    color: #475468;
+}
+
 ul, ol {
     margin-top: 24px;
     margin-left: 24px;
@@ -76,17 +80,27 @@ ul > li, ol > li {
 }
 
 .suggested-recipe-section {
-    margin-left: 62px;
+    margin: 0 auto 39px auto;
+    width: 594px;
+}
+
+.suggested-recipe-section > h2, .suggested-recipe-section > h3 {
+    margin-top: 60px;
 }
 
 .suggested-recipe-section > article {
     margin-top: 24px;
 }
 
-.suggested-recipe-container > p:nth-of-type(2) {
+.suggested-recipe-section > p {
+    margin-top: 24px;
+}
+
+.suggested-recipe-section > p:nth-of-type(2) {
     margin-top: 60px;
 }
 
-.suggested-recipe-container > p:nth-of-type(3) {
+.suggested-recipe-section > p:nth-of-type(3) {
     margin-top: 60px;
 }
+

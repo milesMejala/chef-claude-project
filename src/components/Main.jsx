@@ -9,7 +9,7 @@ import { getRecipeFromChefGPT } from "/ai.js"
 export default function Main() {
 
     const [ingredients, setIngredient] = React.useState([])
-    const [recipeShown, setRecipeShown] = React.useState(false)
+    const [recipe, setRecipe] = React.useState("")
 
     function handleSubmit(formData) {
         const newIngredient = formData.get("ingredient")
@@ -18,7 +18,7 @@ export default function Main() {
 
     async function getRecipe() {
         const recipeMarkdown = await getRecipeFromChefGPT(ingredients)
-        console.log(recipeMarkdown)
+        setRecipe(recipeMarkdown)
     }
 
     return (
@@ -39,7 +39,7 @@ export default function Main() {
                     getRecipe={getRecipe} 
                 />
             }
-            {recipeShown && <Recipe getRecipeFromChefGPT={getRecipeFromChefGPT}/>}
+            {recipe && <Recipe recipe={recipe}/>}
         </main>
     )
 }
