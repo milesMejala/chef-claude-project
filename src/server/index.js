@@ -2,6 +2,7 @@ import express from "express";
 import OpenAI from "openai";
 import dotenv from "dotenv";
 import cors from "cors";
+import rateLimit from "express-rate-limit";
 
 dotenv.config();
 
@@ -12,8 +13,15 @@ but try not to include too many extra ingredients. Format your response in markd
 `;
 
 const app = express();
-app.use(cors());
+app.use(cors({ origin: "http://localhost:5173" }));
 app.use(express.json());
+
+const limiter = rateLimit({
+  windowMs: 60_000, // 1 minute
+  max: 10,          // max 10 requests per minute per IP
+  message: { error: "Too many requests. Please wait a minute and try again." },
+});
+app.use("/api/recipe", limiter);
 
 const client = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
